@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(16May2025:21:10:03):( xrun -access +rwc -f compile_list.f -svseed 19081 +UVM_TESTNAME=zero_packet_count_test +define+UVM_REPORT_DISABLE_FILE_LINE -coverage all -covdut rate_limiter_16to4 -covworkdir /cov_work -covoverwrite -covfile ./cov_files/cov_cmd.cf -uvmhome CDNS-1.1d )

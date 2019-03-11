@@ -1,0 +1,417 @@
+xrun(64): 20.09-s009: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s009: Started on May 16, 2025 at 21:10:02 IST
+xrun
+	-access +rwc
+	-f compile_list.f
+		./../../RTL/grant_arbiter.sv
+		./../../RTL/rate_limiter_16to8.sv
+		./../../RTL/sch_ctrl_fsm.sv
+		./../../RTL/scheduler_reg_config.sv
+		./../UVME/uvm_pkg/test_pkg.sv
+		./../UVME/top/ulss_top.sv
+		./../UVME/top/ulss_interface.sv
+	-svseed 19081
+	+UVM_TESTNAME=zero_packet_count_test
+	+define+UVM_REPORT_DISABLE_FILE_LINE
+	-coverage all
+	-covdut rate_limiter_16to4
+	-covworkdir /cov_work
+	-covoverwrite
+	-covfile ./cov_files/cov_cmd.cf
+	-uvmhome CDNS-1.1d
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /tools/cadence_march2021/XCELIUM2009/tools/methodology/UVM/CDNS-1.1d
+file: ./../../RTL/grant_arbiter.sv
+	module worklib.grant_arbiter:sv
+		errors: 0, warnings: 0
+file: ./../../RTL/rate_limiter_16to8.sv
+	module worklib.rate_limiter_16to4:sv
+		errors: 0, warnings: 0
+file: ./../../RTL/sch_ctrl_fsm.sv
+	module worklib.sch_ctrl_fsm:sv
+		errors: 0, warnings: 0
+file: ./../../RTL/scheduler_reg_config.sv
+	module worklib.schduler_reg_config:sv
+		errors: 0, warnings: 0
+file: ./../UVME/uvm_pkg/test_pkg.sv
+package test_pkg;
+               |
+xmvlog: *W,TSNSPK (./../UVME/uvm_pkg/test_pkg.sv,1|15): `timescale is not specified for the package.  The default timescale of 1ns/1ns will be assumed for this package.
+	package worklib.test_pkg:sv
+		errors: 0, warnings: 1
+file: ./../UVME/top/ulss_top.sv
+     int wait_timeout_cycles =36000;       // Default for regular tests
+                             |
+xmvlog: *W,VARIST (./../UVME/top/ulss_top.sv,165|29): Local static variable with initializer requires 'static' keyword.
+  int simulation_timeout_cycles = 36000;
+                                |
+xmvlog: *W,VARIST (./../UVME/top/ulss_top.sv,166|32): Local static variable with initializer requires 'static' keyword.
+	module worklib.ulss_top:sv
+		errors: 0, warnings: 2
+file: ./../UVME/top/ulss_interface.sv
+	interface worklib.ulss_interface:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+xmelab: *W,COVEOP: ./cov_files/cov_cmd.cf:5 "-all" with set_expr_scoring is an expensive option as it selects all the expressions in the design. It has been deprecated and will not be supported in subsequent releases.
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		test_pkg
+		ulss_top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+	Extracting FSMs for coverage:
+		worklib.schduler_reg_config
+		worklib.sch_ctrl_fsm
+			FSM extracted for state register present_state_stream
+		worklib.grant_arbiter
+		worklib.rate_limiter_16to4
+	Total FSMs extracted = 1
+	Building instance overlay tables: ..............
+xmelab: *W,COVFHT: FSM hold transitions (transitions to the current state) are not extracted for any FSM in default mode.
+...... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+	Generating native compiled code:
+		worklib.grant_arbiter:sv <0x5cd1feb4>
+			streams:  17, words: 62830
+		worklib.sch_ctrl_fsm:sv <0x054cb133>
+			streams: 103, words: 728682
+		worklib.schduler_reg_config:sv <0x5370bc2e>
+			streams:  41, words: 43653
+		worklib.rate_limiter_16to4:sv <0x4b74419f>
+			streams: 168, words: 89124
+		worklib.uvm_pkg:sv <0x3dcbad81>
+			streams:   8, words:  7297
+		worklib.uvm_pkg:sv <0x2f91819b>
+			streams:   8, words:  6957
+		worklib.uvm_pkg:sv <0x31cb4722>
+			streams:   7, words:  6367
+		worklib.uvm_pkg:sv <0x3206e6ff>
+			streams:   7, words:  1927
+		worklib.uvm_pkg:sv <0x4f23563a>
+			streams:   8, words:  2774
+		worklib.uvm_pkg:sv <0x7e790689>
+			streams:  22, words: 50873
+		worklib.uvm_pkg:sv <0x14223414>
+			streams:   7, words:  1927
+		worklib.uvm_pkg:sv <0x5dd179c4>
+			streams:  28, words: 26694
+		worklib.uvm_pkg:sv <0x303a6a02>
+			streams:  27, words: 25367
+		worklib.uvm_pkg:sv <0x007d6d48>
+			streams:  23, words: 24732
+		worklib.uvm_pkg:sv <0x10696b1d>
+			streams:  14, words:  5954
+		worklib.uvm_pkg:sv <0x66e8f099>
+			streams:  26, words: 34749
+		worklib.uvm_pkg:sv <0x6eadf6be>
+			streams:   7, words:  2431
+		worklib.uvm_pkg:sv <0x6f4f3d2b>
+			streams:  14, words: 16336
+		worklib.uvm_pkg:sv <0x227ddbd1>
+			streams:  26, words: 30362
+		worklib.uvm_pkg:sv <0x0e71a912>
+			streams:  25, words: 56508
+		worklib.uvm_pkg:sv <0x15344fc0>
+			streams:  27, words: 33088
+		worklib.uvm_pkg:sv <0x55d9e74e>
+			streams:  26, words: 46739
+		worklib.uvm_pkg:sv <0x13d9c2a2>
+			streams:  27, words: 35726
+		worklib.uvm_pkg:sv <0x103ab239>
+			streams:  25, words: 51845
+		worklib.uvm_pkg:sv <0x62848dbb>
+			streams:  27, words: 37797
+		worklib.uvm_pkg:sv <0x68a6ae12>
+			streams:  25, words: 57151
+		worklib.uvm_pkg:sv <0x51b7f706>
+			streams:  27, words: 42575
+		worklib.uvm_pkg:sv <0x720edd9b>
+			streams:  25, words: 50559
+		worklib.uvm_pkg:sv <0x46216641>
+			streams:  25, words: 53516
+		worklib.uvm_pkg:sv <0x30d3e408>
+			streams:  27, words: 35155
+		worklib.uvm_pkg:sv <0x232005fa>
+			streams:  25, words: 50174
+		worklib.uvm_pkg:sv <0x5d08ac18>
+			streams:  28, words: 82474
+		worklib.uvm_pkg:sv <0x28f622b7>
+			streams:  59, words: 80505
+		worklib.cdns_uvm_pkg:sv <0x021562c4>
+			streams:  27, words: 34504
+		worklib.cdns_uvm_pkg:sv <0x18e23f5c>
+			streams:   8, words:  4031
+		worklib.cdns_uvm_pkg:sv <0x77f9234b>
+			streams:  10, words:  8705
+		worklib.uvm_pkg:sv <0x35d4e099>
+			streams:  25, words: 308293
+		worklib.uvm_pkg:sv <0x023df8a1>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x37cbc25f>
+			streams:  25, words: 36835
+		worklib.uvm_pkg:sv <0x7af81adf>
+			streams:  24, words: 25967
+		worklib.uvm_pkg:sv <0x10f0705a>
+			streams:  25, words: 29248
+		worklib.uvm_pkg:sv <0x7a0bf362>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x2b0fdcb4>
+			streams:  25, words: 28467
+		worklib.uvm_pkg:sv <0x43f04573>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x35ffa74f>
+			streams:  25, words: 28467
+		worklib.uvm_pkg:sv <0x5ca307ee>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x186775ae>
+			streams:  25, words: 51816
+		worklib.uvm_pkg:sv <0x6dcac2b8>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x6aaf11e7>
+			streams:  25, words: 103441
+		worklib.uvm_pkg:sv <0x1246ff3c>
+			streams:  24, words: 26127
+		worklib.uvm_pkg:sv <0x7596332d>
+			streams:  27, words: 70570
+		worklib.uvm_pkg:sv <0x22809f8c>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x2905b84a>
+			streams:  25, words: 64747
+		worklib.uvm_pkg:sv <0x33a7332b>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x1180f217>
+			streams:  25, words: 96196
+		worklib.uvm_pkg:sv <0x4c8784a8>
+			streams:  24, words: 26117
+		worklib.uvm_pkg:sv <0x1e3af696>
+			streams:  27, words: 70560
+		worklib.uvm_pkg:sv <0x16d02ed4>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x6fc46f4c>
+			streams:  25, words: 304423
+		worklib.uvm_pkg:sv <0x0810cd58>
+			streams:  24, words: 26130
+		worklib.uvm_pkg:sv <0x4900104b>
+			streams:  27, words: 70573
+		worklib.uvm_pkg:sv <0x78c21fe8>
+			streams:  24, words: 25833
+		worklib.uvm_pkg:sv <0x4d729bb4>
+			streams:  25, words: 64699
+		worklib.uvm_pkg:sv <0x5af86559>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x6797dcf4>
+			streams:  25, words: 135647
+		worklib.uvm_pkg:sv <0x6e47b3d4>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x3c81a986>
+			streams:  25, words: 122614
+		worklib.uvm_pkg:sv <0x135dabb4>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x13ecb531>
+			streams:  25, words: 156540
+		worklib.uvm_pkg:sv <0x6c0fadb1>
+			streams:  24, words: 25924
+		worklib.uvm_pkg:sv <0x390fe82f>
+			streams:  25, words: 34342
+		worklib.uvm_pkg:sv <0x09604b9d>
+			streams:  24, words: 25924
+		worklib.test_pkg:sv <0x4f465ee6>
+			streams:  25, words: 24121
+		worklib.uvm_pkg:sv <0x3a90d774>
+			streams:   7, words:  3099
+		worklib.uvm_pkg:sv <0x207cd94d>
+			streams:  24, words: 24740
+		worklib.uvm_pkg:sv <0x5dfda0d5>
+			streams:  24, words: 24048
+		worklib.uvm_pkg:sv <0x38b07081>
+			streams:   9, words:  4539
+		worklib.uvm_pkg:sv <0x32af93b4>
+			streams:  26, words: 41358
+		worklib.uvm_pkg:sv <0x1f2850bc>
+			streams:   7, words:  3099
+		worklib.uvm_pkg:sv <0x29c3d7f2>
+			streams:  67, words: 65681
+		worklib.uvm_pkg:sv <0x4261917e>
+			streams: 303, words: 477393
+		worklib.uvm_pkg:sv <0x18842908>
+			streams:  38, words: 49825
+		worklib.uvm_pkg:sv <0x6e272f79>
+			streams:  39, words: 76213
+		worklib.uvm_pkg:sv <0x38ad9018>
+			streams:   7, words:  3099
+		worklib.uvm_pkg:sv <0x63424776>
+			streams:  25, words: 28467
+		worklib.uvm_pkg:sv <0x4b4d6f00>
+			streams: 208, words: 221207
+		worklib.uvm_pkg:sv <0x38660893>
+			streams:  24, words: 333843
+		worklib.ulss_top:sv <0x57c2e56e>
+			streams: 174, words: 119806
+		worklib.test_pkg:sv <0x552b67f8>
+			streams:   0, words:     0
+		worklib.cdns_uvm_pkg:sv <0x2861c870>
+			streams: 134, words: 245166
+		worklib.cdns_uvmapi:svp <0x570d5ffa>
+			streams:  27, words: 31790
+		worklib.cdns_assert2uvm_pkg:sv <0x4ff7aa98>
+			streams:   3, words:  2239
+		worklib.uvm_pkg:sv <0x1c53ead7>
+			streams: 4438, words: 7122900
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                       Instances  Unique
+		Modules:                       8       5
+		Interfaces:                    1       1
+		Verilog packages:              5       5
+		Registers:                 16668   11780
+		Scalar wires:                472       -
+		Vectored wires:              298       -
+		Named events:                  4      12
+		Always blocks:               142      37
+		Initial blocks:              401     197
+		Parallel blocks:              28      29
+		Cont. assignments:           312     117
+		Pseudo assignments:          254     254
+		Assertions:                    2       2
+		Covergroup Instances:          0       1
+		SV Class declarations:       237     350
+		SV Class specializations:    459     459
+	Writing initial simulation snapshot: worklib.ulss_top:sv
+xmsim: *E,CNDIR: Could not create/open directory /cov_work. (Permission denied).
+Loading snapshot worklib.ulss_top:sv .................... Done
+SVSEED set from command line: 19081
+xmsim: *W,RNDXCELON: A newer version of the SystemVerilog constraint solver is being used which has better support for array-solving, new solve-order mechanism, and seed stability enhancements..
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /tools/cadence_march2021/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> source /tools/cadence_march2021/XCELIUM2009/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (20.09-s009)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test zero_packet_count_test...
+UVM_INFO @ 0: uvm_test_top.env.sbd [ulss_scoreboard] Scoreboard build phase completed
+UVM_INFO @ 0: uvm_test_top.env.ulss_agent.drv [ulss_driver] Using wait_timeout_cycles=200, simulation_timeout_cycles=100000
+UVM_INFO @ 0: uvm_test_top.env.sbd [ulss_scoreboard] Scoreboard connect phase completed
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+------------------------------------------------------------------------
+Name                               Type                    Size  Value  
+------------------------------------------------------------------------
+uvm_test_top                       zero_packet_count_test  -     @2779  
+  env                              ulss_env                -     @2839  
+    cov                            ulss_coverage           -     @2916  
+      analysis_imp                 uvm_analysis_imp        -     @2965  
+    sbd                            ulss_scoreboard         -     @2998  
+      dut_analysis_imp             uvm_analysis_imp        -     @3056  
+    ulss_agent                     ulss_agent              -     @2885  
+      drv                          ulss_driver             -     @3090  
+        rsp_port                   uvm_analysis_port       -     @3190  
+        seq_item_port              uvm_seq_item_pull_port  -     @3139  
+        wait_timeout_cycles        integral                32    'hc8   
+        simulation_timeout_cycles  integral                32    'h186a0
+      mon                          ulss_monitor            -     @3169  
+        analysis_port              uvm_analysis_port       -     @3932  
+      sqr                          ulss_sequencer          -     @3250  
+        rsp_export                 uvm_analysis_export     -     @3308  
+        seq_item_export            uvm_seq_item_pull_imp   -     @3856  
+        arbitration_queue          array                   0     -      
+        lock_queue                 array                   0     -      
+        num_last_reqs              integral                32    'd1    
+        num_last_rsps              integral                32    'd1    
+------------------------------------------------------------------------
+
+UVM_INFO @ 0: uvm_test_top [uvm_test_top] it test first line
+UVM_INFO @ 0: uvm_test_top [zero_packet_count_test] inside the packet_count_limit_zero_packet_count_sequence_instuence_inst test
+UVM_INFO @ 0: uvm_test_top.env.ulss_agent.sqr@@zero_packet_count_sequence_inst [zero_packet_count_sequence] zero_packet_count_sequence: Starting test with a single stream mapping
+UVM_INFO @ 128: uvm_test_top.env.ulss_agent.drv [ulss_driver] [DRV] WRITE ADDR=0 DATA=0x1
+UVM_INFO @ 130: uvm_test_top.env.ulss_agent.mon [ulss_monitor] [MON] Register write: ENABLE=1 ADDR=0x0 DATA=0x1
+UVM_WARNING @ 958: uvm_test_top.env.ulss_agent.drv [ulss_driver] Timeout waiting for pck_rd_en_grnt_10 after 200 cycles - attempting recovery
+UVM_ERROR @ 1078: uvm_test_top.env.ulss_agent.drv [ulss_driver] Recovery failed for pck_rd_en_grnt_10 - skipping packet
+UVM_WARNING @ 1878: uvm_test_top.env.ulss_agent.drv [ulss_driver] Timeout waiting for pck_rd_en_grnt_11 after 200 cycles - attempting recovery
+UVM_ERROR @ 1998: uvm_test_top.env.ulss_agent.drv [ulss_driver] Recovery failed for pck_rd_en_grnt_11 - skipping packet
+UVM_WARNING @ 2798: uvm_test_top.env.ulss_agent.drv [ulss_driver] Timeout waiting for pck_rd_en_grnt_12 after 200 cycles - attempting recovery
+UVM_ERROR @ 2918: uvm_test_top.env.ulss_agent.drv [ulss_driver] Recovery failed for pck_rd_en_grnt_12 - skipping packet
+UVM_WARNING @ 3718: uvm_test_top.env.ulss_agent.drv [ulss_driver] Timeout waiting for pck_rd_en_grnt_14 after 200 cycles - attempting recovery
+UVM_ERROR @ 3838: uvm_test_top.env.ulss_agent.drv [ulss_driver] Recovery failed for pck_rd_en_grnt_14 - skipping packet
+UVM_WARNING @ 4638: uvm_test_top.env.ulss_agent.drv [ulss_driver] Timeout waiting for pck_rd_en_grnt_15 after 200 cycles - attempting recovery
+UVM_ERROR @ 4758: uvm_test_top.env.ulss_agent.drv [ulss_driver] Recovery failed for pck_rd_en_grnt_15 - skipping packet
+UVM_INFO @ 4762: uvm_test_top.env.ulss_agent.sqr@@zero_packet_count_sequence_inst [zero_packet_count_sequence] OUT_STREAM_0_REG configured with value 0x1
+UVM_INFO @ 4782: uvm_test_top.env.ulss_agent.drv [ulss_driver] [DRV] WRITE ADDR=4 DATA=0x10003
+UVM_INFO @ 4786: uvm_test_top.env.ulss_agent.mon [ulss_monitor] [MON] Register write: ENABLE=1 ADDR=0x4 DATA=0x10003
+UVM_INFO @ 4806: uvm_test_top.env.ulss_agent.sqr@@zero_packet_count_sequence_inst [zero_packet_count_sequence] IN_STREAM_0_REG configured with values: tokens=3, packets=1
+UVM_INFO @ 4838: uvm_test_top.env.ulss_agent.drv [ulss_driver] [DRV] Driving stream 0: data=0x2116e2d878a067ea, sop=1, eop=0
+UVM_INFO @ 4842: uvm_test_top.env.sbd [ulss_scoreboard] Output 0 MATCH - Expected: SOP=1, DATA=0x2116e2d878a067ea, EOP=0, Actual: SOP=1, DATA=0x2116e2d878a067ea, EOP=0
+UVM_INFO @ 4846: uvm_test_top.env.ulss_agent.sqr@@zero_packet_count_sequence_inst [zero_packet_count_sequence] Sent first word with SOP asserted
+UVM_INFO @ 4858: uvm_test_top.env.ulss_agent.drv [ulss_driver] [DRV] Grant for stream 0 already active
+UVM_INFO @ 4858: uvm_test_top.env.ulss_agent.drv [ulss_driver] [DRV] Driving stream 0: data=0x25eb41806969737b, sop=0, eop=1
+UVM_INFO @ 4862: uvm_test_top.env.sbd [ulss_scoreboard] Output 0 MATCH - Expected: SOP=0, DATA=0x25eb41806969737b, EOP=1, Actual: SOP=0, DATA=0x25eb41806969737b, EOP=1
+UVM_INFO @ 4866: uvm_test_top.env.ulss_agent.sqr@@zero_packet_count_sequence_inst [zero_packet_count_sequence] Sent last word with EOP asserted
+UVM_INFO @ 4882: uvm_test_top.env.ulss_agent.sqr@@zero_packet_count_sequence_inst [zero_packet_count_sequence] zero_packet_count_sequence completed
+UVM_INFO @ 4882: uvm_test_top [zero_packet_count_test] zero_packet_count_test scenario 2 is completed
+UVM_WARNING @ 400078: uvm_test_top.env.ulss_agent.drv [ulss_driver] Global simulation timeout reached (100000 cycles), ending simulation
+UVM_INFO @ 400118: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO @ 400118: uvm_test_top.env.sbd [ulss_scoreboard] Scoreboard report - Match count: 2, Mismatch count: 0
+UVM_INFO @ 400118: uvm_test_top.env.sbd [ulss_scoreboard] TEST PASSED - All DUT outputs matched expected results
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   26
+UVM_WARNING :    6
+UVM_ERROR :    5
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVMTOP]     1
+[ulss_driver]    17
+[ulss_monitor]     2
+[ulss_scoreboard]     6
+[uvm_test_top]     1
+[zero_packet_count_sequence]     6
+[zero_packet_count_test]     2
+Simulation complete via $finish(1) at time 400118 NS + 45
+/tools/cadence_march2021/XCELIUM2009/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> exit
+xmsim: *W,CGDEFN: Default name "uvm_pkg.uvm_test_top.env.cov.ulss_io_cg" will be generated for covergroup instance "worklib.test_pkg::ulss_coverage::ulss_io_cg@2997_2" as the name of the covergroup instance is not specified explicitly: ../UVME/env/ulss_coverage.sv, 7.
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  ulss_top.dut(rate_limiter_16to4)
+  scope    :  scope
+  testname :  test_sv19081
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_164ff12e_4bc64fa2.ucm (reused)
+  data               :  ./cov_work/scope/test_sv19081/icc_164ff12e_4bc64fa2.ucd
+TOOL:	xrun(64)	20.09-s009: Exiting on May 16, 2025 at 21:10:20 IST  (total: 00:00:18)

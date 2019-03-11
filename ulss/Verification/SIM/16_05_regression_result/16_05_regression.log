@@ -1,0 +1,21 @@
+REGRESSION RESULTS
+==================
+
+PASSED TESTS: 10
+test_name : in_stream_twelve_to_fifteen_map_test    seed : 99686
+test_name : in_stream_zero_to_three_map_test    seed : 2428
+test_name : reset_test    seed : 11517
+test_name : soft_reset_test    seed : 7193
+test_name : out_stream_zero_reg_test    seed : 90624
+test_name : packet_count_limit_test    seed : 13875
+test_name : in_stream_four_to_seven_map_test    seed : 33847
+test_name : concurrent_stream_test    seed : 46513
+test_name : in_stream_zero_reg_test    seed : 70807
+test_name : in_stream_eight_to_eleven_map_test    seed : 54073
+
+----------------
+FAILED TESTS: 4
+test_name : maximun_packet_count_test    seed : 38745
+test_name : stream_map_test    seed : 41671
+test_name : empty_packet_store_test    seed : 2015
+test_name : zero_packet_count_test    seed : 19081

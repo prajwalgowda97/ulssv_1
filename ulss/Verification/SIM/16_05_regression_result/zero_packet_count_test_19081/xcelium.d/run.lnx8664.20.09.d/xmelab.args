@@ -1,0 +1,27 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
++define+UVM_REPORT_DISABLE_FILE_LINE
+-loadpli
+/tools/cadence_march2021/XCELIUM2009/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so:uvm_pli_boot
+-ACCESS
++rwc
++UVM_TESTNAME=zero_packet_count_test
+-COVERAGE
+all
+-COVDUT
+rate_limiter_16to4
+-COVFILE
+./cov_files/cov_cmd.cf
+-MESSAGES
+-XLMODE
+./xcelium.d/run.lnx8664.20.09.d
+-RUNMODE
+-CDSLIB
+./xcelium.d/run.lnx8664.20.09.d/cds.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.20.09.d/hdl.var
+-WORK
+worklib
+-HASXLMODE
